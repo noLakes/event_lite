@@ -21,12 +21,14 @@
         <td><strong>Title</strong></td>
         <td><strong>Host</strong></td>
         <td><strong>Location</strong><td>
+        <td><strong>Description</strong><td>
         <td><strong>Date</strong><td>
         <td><strong>Time</strong><td>
       </tr>
         <td><%= e.title %></td>
         <td><%= [e.creator.first_name, e.creator.last_name].join(' ')%></td>
         <td><%= e.location %></td>
+        <td><%= e.description %></td>
         <td><%= e.date %></td>
         <td><%= e.time %></td>
       <tr>
