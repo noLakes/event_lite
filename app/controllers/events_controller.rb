@@ -4,6 +4,10 @@ class EventsController < ApplicationController
     @event = Event.find(event_params[:id])
   end
 
+  def index
+    @events = Event.all.order("created_at DESC")
+  end
+
   private
 
   def event_params
