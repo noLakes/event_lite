@@ -22,6 +22,17 @@ class EventsController < ApplicationController
     @events = Event.all.order("created_at DESC")
   end
 
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to @event, notice: "Event successfully updated"
+    else
+      render :new
+    end
+  end
+
   private
 
   def set_event
