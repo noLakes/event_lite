@@ -18,25 +18,79 @@
   <% @user.events.each do |e|%>
     <table>
       <tr>
-        <td><strong>Title</strong></td>
-        <td><strong>Host</strong></td>
-        <td><strong>Location</strong><td>
-        <td><strong>Description</strong><td>
-        <td><strong>Time</strong><td>
-      </tr>
+        <td><strong>Title:</strong></td>
         <td><%= e.title %></td>
-        <td><%= [e.creator.first_name, e.creator.last_name].join(' ')%></td>
-        <td><%= e.location %></td>
-        <td><%= e.description %></td>
-        <td><%= e.time %></td>
+      </tr>
       <tr>
+        <td><strong>Location:</strong></td>
+        <td><%= e.location %></td>
+      </tr>
+      <tr>
+        <td><strong>Description::</strong></td>
+        <td><%= e.description %></td>
+      </tr>
+      <tr>
+        <td><strong>Start Time:</strong></td>
+        <td><%= e.time %></td>
       </tr>
     </table>
   <% end %>
-  </br>
 
+<h2>Attending Events</h2>
 
+  <h3>Upcoming</h3>
+    <% @user.attended_events.upcoming.each do |e| %>
+      <table>
+      <tr>
+        <td><strong>Title:</strong></td>
+        <td><%= e.title %></td>
+      </tr>
+      <tr>
+        <td><strong>Host:</strong></td>
+        <td><%= [e.creator.first_name, e.creator.last_name].join(' ') %></td>
+      </tr>
+      <tr>
+        <td><strong>Location:</strong></td>
+        <td><%= e.location %></td>
+      </tr>
+      <tr>
+        <td><strong>Description::</strong></td>
+        <td><%= e.description %></td>
+      </tr>
+      <tr>
+        <td><strong>Start Time:</strong></td>
+        <td><%= e.time %></td>
+      </tr>
+    </table>
+    <% end %>
+  
+  <h3>Past</h3>
+    <% @user.attended_events.past.each do |e| %>
+      <table>
+      <tr>
+        <td><strong>Title:</strong></td>
+        <td><%= e.title %></td>
+      </tr>
+      <tr>
+        <td><strong>Host:</strong></td>
+        <td><%= [e.creator.first_name, e.creator.last_name].join(' ') %></td>
+      </tr>
+      <tr>
+        <td><strong>Location:</strong></td>
+        <td><%= e.location %></td>
+      </tr>
+      <tr>
+        <td><strong>Description::</strong></td>
+        <td><%= e.description %></td>
+      </tr>
+      <tr>
+        <td><strong>Start Time:</strong></td>
+        <td><%= e.time %></td>
+      </tr>
+    </table>
+    <% end %>
 
-#add link to homepage/back
+</br>
+<%= link_to 'Back', root_path %>
 
 
