@@ -91,6 +91,11 @@
     <% end %>
 
 </br>
+
+<% if @user == current_user %>
+  <%= link_to 'Edit Profile', edit_user_registration_path %>
+<% end %></br>
+
 <%= link_to 'Back', root_path %>
 
 
