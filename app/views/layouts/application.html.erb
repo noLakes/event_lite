@@ -17,6 +17,7 @@
     <nav>
       <%= link_to 'Home', root_path %>
       <% if user_signed_in? %>
+        <%= link_to 'NewEvent!', new_event_path %>
         <%= link_to 'Profile', user_path(current_user)%>
         <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
       <% else %>
