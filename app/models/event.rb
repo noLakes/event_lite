@@ -5,4 +5,8 @@ class Event < ApplicationRecord
 
   scope :past, -> { where("time < ?", DateTime.now) }
   scope :upcoming, -> { where("time > ?", DateTime.now) }
+
+  def pretty_time
+    self.time.to_formatted_s(:short)
+  end
 end

@@ -47,7 +47,7 @@
       </tr>
       <tr>
         <td><strong>Host:</strong></td>
-        <td><%= [e.creator.first_name, e.creator.last_name].join(' ') %></td>
+        <td><%= e.creator.f_name %></td>
       </tr>
       <tr>
         <td><strong>Location:</strong></td>
@@ -59,7 +59,7 @@
       </tr>
       <tr>
         <td><strong>Start Time:</strong></td>
-        <td><%= e.time %></td>
+        <td><%= e.pretty_time %></td>
       </tr>
     </table>
     <% end %>
@@ -73,7 +73,7 @@
       </tr>
       <tr>
         <td><strong>Host:</strong></td>
-        <td><%= [e.creator.first_name, e.creator.last_name].join(' ') %></td>
+        <td><%= e.creator.f_name %></td>
       </tr>
       <tr>
         <td><strong>Location:</strong></td>
@@ -85,7 +85,7 @@
       </tr>
       <tr>
         <td><strong>Start Time:</strong></td>
-        <td><%= e.time %></td>
+        <td><%= e.pretty_time %></td>
       </tr>
     </table>
     <% end %>
