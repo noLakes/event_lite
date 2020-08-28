@@ -1,13 +1,28 @@
 <h1><%= @event.title %></h1>
 
-<p>Host:<%= [@event.creator.first_name, @event.creator.first_name].join(' ') %></p>
-<p>Location:<%= @event.location %></p>
-<p>Description:<%= @event.description %></p>
-<p>Starts At:<%= @event.time %></p>
+<% e = @event %>
+<table>
+  <tr>
+    <td><strong>Host:</strong></td>
+    <td><%= [e.creator.first_name, e.creator.last_name].join(' ') %></td>
+  </tr>
+  <tr>
+    <td><strong>Location:</strong></td>
+    <td><%= e.location %></td>
+  </tr>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><%= e.description %></td>
+  </tr>
+  <tr>
+    <td><strong>Start Time:</strong></td>
+    <td><%= e.time %></td>
+  </tr>
+</table>
 
 <h2>Attending</h2>
-<ul>
+
   <% @event.attendees.each do |a| %>
-    <li><%= [a.first_name, a.last_name].join(' ')%></li>
+    <%= link_to a.f_name, user_path(a) %>
+    </br>
   <% end %>
-</ul>

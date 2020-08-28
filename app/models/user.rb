@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :events
   has_many :attendings
   has_many :attended_events, through: :attendings, source: :event
+
+  def f_name
+    [self.first_name, self.last_name].join(' ')
+  end
 end
