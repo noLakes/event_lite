@@ -1,6 +1,15 @@
 <h1>Events</h1>
 
 <h2>Upcoming</h2>
-  Event.
+  <% Event.upcoming.each do |e| %>
+    <%= link_to e.title, event_path(e) %>
+    </br>
+  <% end %>
+
+</br>
 
 <h2>Past</h2>
+  <% Event.past.each do |e| %>
+    <%= link_to e.title, event_path(e) %>
+    </br>
+  <% end %>
